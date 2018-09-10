@@ -1,5 +1,7 @@
 import java.io.*;
 import java.security.*;
+import java.util.ArrayList;
+
 import javax.xml.bind.*;
 
 class ReturnDigest extends Thread {
@@ -40,6 +42,9 @@ class ReturnDigest extends Thread {
 	public byte[] getDigest() {
 		return digest;
 	}
+	public String getFilename() {
+		return filename;
+	}
 
 }
 
@@ -47,13 +52,19 @@ public class RaceConditionTest {
 
 	///*
 	public static void main(String[] args) throws InterruptedException {
+		ArrayList<ReturnDigest> threadList = new ArrayList<ReturnDigest>();
+		
 		for (String filename : args) {
 			//Calculate the digest
 			ReturnDigest dr = new ReturnDigest(filename);
 			dr.start();
-			
+			threadList.add(dr);
+		}
+		
+		for(ReturnDigest dr : threadList) {
 			// Now print the result
-			StringBuilder result = new StringBuilder(filename);
+			dr.join();
+			StringBuilder result = new StringBuilder(dr.getFilename());
 			result.append(": ");
 			byte[] digest = dr.getDigest();
 			result.append(DatatypeConverter.printHexBinary(digest));
