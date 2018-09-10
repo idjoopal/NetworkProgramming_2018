@@ -1,5 +1,7 @@
 import java.io.*;
 import java.security.*;
+import java.util.ArrayList;
+
 import javax.xml.bind.*;
 
 
@@ -48,7 +50,15 @@ public class RaceConditionTest {
 
 	///*
 	public static void main(String[] args) throws InterruptedException {
-		for (String filename : args) {
+		
+		ArrayList<String> filenames = new ArrayList<String>();
+		filenames.add("./src/test1.txt");
+		filenames.add("./src/test2.txt");
+		filenames.add("./src/test3.txt");
+		filenames.add("./src/test4.txt");
+		filenames.add("./src/test5.txt");
+		
+		for (String filename : filenames) {
 			//Calculate the digest
 			ReturnDigest dr = new ReturnDigest(filename);
 			dr.start();
