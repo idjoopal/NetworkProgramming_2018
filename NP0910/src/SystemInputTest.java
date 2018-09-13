@@ -6,9 +6,11 @@ public class SystemInputTest {
 		int i=0;
 		
 		try {
+			System.out.println("before while: i="+i);
 			while((i=System.in.read()) != -1) {
-				System.out.println(i);
-				System.out.write(+i);
+				//System.out.println(i);
+				Thread.sleep(500);
+				System.out.write(i);
 			}
 		}catch (Exception e) {
 			// TODO: handle exception
