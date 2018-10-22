@@ -11,11 +11,17 @@ public class SourceViewer2 {
 			URLConnection uc = u.openConnection();
 			try (InputStream raw = uc.getInputStream()) { // autoclose
 				InputStream buffer = new BufferedInputStream(raw);       
-				// chain the InputStream to a Reader
+				// chain the InputStream to a Reader				
 				Reader reader = new InputStreamReader(buffer);
-				int c;
-				while ((c = reader.read()) != -1) {
-					System.out.print((char) c);
+
+				// add
+				BufferedReader br = new BufferedReader(reader);
+				// int c;
+				String line = null;
+				
+				// while ((c = br.read()) != -1) {
+				while ((line = br.readLine()) != null) {
+						System.out.println(line);
 				}
 			}
 		} catch (MalformedURLException ex) {
