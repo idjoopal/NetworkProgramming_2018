@@ -7,7 +7,8 @@ public class AddressResolutionByName {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		try {
-			InetAddress address = InetAddress.getByName("www.konkuk.ac.kr");
+			//InetAddress address = InetAddress.getByName("www.konkuk.ac.kr");
+			InetAddress address = InetAddress.getByName("dna.soyoungpark.me");
 			System.out.println(address);
 			System.out.println(address.getHostName());
 			System.out.println(address.getCanonicalHostName());
