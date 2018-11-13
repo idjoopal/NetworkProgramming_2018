@@ -5,8 +5,9 @@ public class DaytimeClient {
 
 	public static void main(String[] args) {
 
-		String hostname = args.length > 0 ? args[0] : "utcnist.colorado.edu";
+//		String hostname = args.length > 0 ? args[0] : "utcnist.colorado.edu";
 //		String hostname = args.length > 0 ? args[0] : "www.lolcats.com";
+		String hostname = args.length > 0 ? args[0] : "localhost";
 		Socket socket = null;
 		try {
 			socket = new Socket(hostname, 13);

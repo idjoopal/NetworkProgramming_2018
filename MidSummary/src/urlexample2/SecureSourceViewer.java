@@ -12,7 +12,6 @@ public class SecureSourceViewer {
 
 		Authenticator.setDefault(new DialogAuthenticator());
 //		Authenticator.setDefault(da);
-//		da.show();
 //		Authenticator.requestPasswordAuthentication(addr, port, protocol, prompt, scheme);
 		
 
