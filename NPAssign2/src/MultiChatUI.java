@@ -110,7 +110,7 @@ public class MultiChatUI extends JFrame {
 		// 메시지 출력(msgOut) 영역 스크롤바 구성, 수직 스크롤바는 항상 나타내고 수평 스크롤바는 필요시 나타나도록 함.
 		// (JScrollPane)
 		JScrollPane jsp = new JScrollPane(msgOut, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
-				JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+				JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
 		// 메인 프레임에 패널 배치 (tab, jsp, msgPanel)
 		add(tab, BorderLayout.NORTH);
@@ -121,13 +121,13 @@ public class MultiChatUI extends JFrame {
 		cardLayout.show(tab, "login");
 
 		// 프레임 크기 자동으로 설정
-		pack();
+		this.pack();
 
 		// 프레임 크기 조정 불가 설정
-		setResizable(false);
+		this.setResizable(false);
 
 		// 프레임이 보여지도록 함
-		setVisible(true);
+		this.setVisible(true);
 	}
 
 	/**
