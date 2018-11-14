@@ -95,7 +95,7 @@ public class MultiChatUI extends JFrame {
 		msgPanel.add(exitButton, BorderLayout.EAST);
 
 		// 로그인/로그아웃 패널 선택을 위한 CardLayout 패널
-		tab = new JPanel();
+		tab = new Container();
 		cardLayout = new CardLayout();
 		tab.setLayout(cardLayout);
 		tab.add(loginPanel, "login");
