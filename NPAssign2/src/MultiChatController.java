@@ -73,7 +73,8 @@ public class MultiChatController implements Runnable{
                     outMsg.println(gson.toJson(new Message(v.id, "", "", "logout")));
                     
                     // 대화창 클리어
-                    chatData.refreshData("");
+                    //chatData.refreshData("");
+                    v.msgOut.setText("");
                     
                     // 로그인 패널로 전환 및 소켓/스트림 닫기 + status 업데이트
                     v.cardLayout.show(v.tab, "login");
@@ -106,6 +107,7 @@ public class MultiChatController implements Runnable{
             // 소켓 생성 (ip, port는 임의로 설정하되 나중에 서버에서 듣게될 포트와 동일해야함)
         	socket = new Socket(ip, 8888);
         	// INFO 레벨 로깅 (서버 연결에 성공했다는 메시지 화면에 출력)
+        	logger.info("서버연결에 성공했습니다.");
 
             // 입출력(inMsg, outMsg) 스트림 생성
         	inMsg = new BufferedReader(new InputStreamReader(socket.getInputStream()));
