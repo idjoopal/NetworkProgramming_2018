@@ -147,34 +147,34 @@ public class MultiChatUI extends JFrame {
 
 	/// * this main() method is here only for testing UI, and should be deleted or
 	/// commented out later
-	public static void main(String[] args) {
-
-		MultiChatUI v = new MultiChatUI();
-		// v.setSize(350,150);
-
-		v.addButtonActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				Object obj = e.getSource();
-
-				// 종료버튼 처리
-				if (obj == v.exitButton) {
-					System.exit(0);
-				} else if (obj == v.loginButton) {
-					v.id = v.idInput.getText();
-					v.outLabel.setText(" 대화명 : " + v.id);
-					v.cardLayout.show(v.tab, "logout");
-					v.msgOut.setText(v.id+">님이 로그인 했습니다.");
-				} else if (obj == v.logoutButton) {
-					// 대화창 클리어
-					v.msgOut.setText("");
-					// 로그인 패널로 전환
-					v.cardLayout.show(v.tab, "login");
-				} else if (obj == v.msgInput) {
-					// 입력창 클리어
-					v.msgInput.setText("");
-				}
-			}
-		});
-	} // delete or comment out this method when working with MultiChatController*/
+//	public static void main(String[] args) {
+//
+//		MultiChatUI v = new MultiChatUI();
+//		// v.setSize(350,150);
+//
+//		v.addButtonActionListener(new ActionListener() {
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				Object obj = e.getSource();
+//
+//				// 종료버튼 처리
+//				if (obj == v.exitButton) {
+//					System.exit(0);
+//				} else if (obj == v.loginButton) {
+//					v.id = v.idInput.getText();
+//					v.outLabel.setText(" 대화명 : " + v.id);
+//					v.cardLayout.show(v.tab, "logout");
+//					v.msgOut.setText(v.id+">님이 로그인 했습니다.");
+//				} else if (obj == v.logoutButton) {
+//					// 대화창 클리어
+//					v.msgOut.setText("");
+//					// 로그인 패널로 전환
+//					v.cardLayout.show(v.tab, "login");
+//				} else if (obj == v.msgInput) {
+//					// 입력창 클리어
+//					v.msgInput.setText("");
+//				}
+//			}
+//		});
+//	} // delete or comment out this method when working with MultiChatController*/
 }
