@@ -14,7 +14,8 @@ public class MultiChatController implements Runnable{
     private final MultiChatData chatData;
 
     // 소켓 연결을 위한 변수 선언
-    private String ip = "203.252.148.148";
+    //private String ip = "203.252.148.148";
+    private String ip = "localhost";
     private Socket socket;
     private BufferedReader inMsg = null;
     private PrintWriter outMsg = null;
